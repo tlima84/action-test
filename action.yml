@@ -1,14 +1,1 @@
-name: 
-on: [push]
-jobs:
-  build:
-    name: Set SSH KEYS
-    runs-on: ubuntu-latest
-    steps:
-    - name: Running git clone ssh
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USER_NAME }}
-        password: ${{ secrets.PASSWORD }}
-        script: git clone https://github.com/tlima84/mySpringBootInit.git
+test
