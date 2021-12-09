@@ -13,4 +13,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: 22
-        script: git clone https://github.com/tlima84/mySpringBootInit.git
+        script: git clone https://github.com/tlima84/mySpringBootInit.git || https://github.com/tlima84/dogfm-garage.git
