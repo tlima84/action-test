@@ -6,7 +6,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: print HOST
+      - name: print HOST 2
         run:  echo  ${{secrets.HOST}}
       - name: create ssh folder
         run:  mkdir -p ~/.ssh/
