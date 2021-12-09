@@ -1,5 +1,6 @@
 name: remote ssh command
 on: [push]
+  workflow_dispatch:
 jobs:
 
   build:
@@ -13,4 +14,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: 22
-        script: git clone https://github.com/tlima84/mySpringBootInit.git && git clone https://github.com/tlima84/dogfm-garage.git
+        script: rm -r mySpringBootInit &&
+         git clone https://github.com/tlima84/mySpringBootInit.git && 
+         git clone https://github.com/tlima84/dogfm-garage.git
