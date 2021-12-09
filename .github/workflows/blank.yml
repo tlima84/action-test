@@ -6,10 +6,11 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password 2
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        port: 22
-        key: ${{ secrets.SSH_KEY }}
-        script: git clone https://github.com/tlima84/mySpringBootInit.git
+      - name: Configure known hosts
+        run: ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+      - name: SSH key
+        run: ${{ secrets.SSH_KEY }} >> ~/.ssh/id_rsa
+      - name: SSH command
+        run: ssh  ${{ secrets.HOST }}
+      - name: git clone
+        run: git clone https://github.com/tlima84/mySpringBootInit.git
