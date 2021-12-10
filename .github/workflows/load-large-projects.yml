@@ -1,0 +1,19 @@
+name: Load large projects
+on: [workflow_dispatch]
+  
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: 22
+        script: rm -r mySpringBootInit && rm -r dogfm-garage &&
+         git clone https://github.com/tlima84/mySpringBootInit.git && 
+         git clone https://github.com/tlima84/dogfm-garage.git

@@ -1,5 +1,5 @@
-name: remote ssh command
-on: [push, workflow_dispatch]
+name: Load small projects
+on: [workflow_dispatch]
   
 jobs:
 
